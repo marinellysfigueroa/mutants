@@ -13,13 +13,11 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Override
     public void configure (HttpSecurity http) throws Exception {
 
-        System.out.println("configure en ResourceServerConfiguration"+ http);
-
         http.cors().and()
-       //Permite consultar el token
-        .authorizeRequests (). antMatchers ("/oauth/token","/mutant").permitAll();
-        // Solicita autorización para la consulta de mutantes y stat
-        http.requestMatchers (). antMatchers ("/stats").and().authorizeRequests().anyRequest(). access ("hasRole ('USER')");
+       // Allows to consult the token
+        .authorizeRequests (). antMatchers ("/oauth/token").permitAll();
+        // Request authorization to consult mutants and stat
+        http.requestMatchers (). antMatchers ("/stats","/mutant").and().authorizeRequests().anyRequest(). access ("hasRole ('USER')");
 
     }
 

@@ -2,11 +2,13 @@ package com.mfigueroa.mutants.infrastructure.controller;
 
 import com.mfigueroa.mutants.application.command.DnaCommand;
 import com.mfigueroa.mutants.application.handler.mutant.AddDnaHandler;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class DnaController {
 
     private final AddDnaHandler addDnaHandler;
@@ -17,6 +19,8 @@ public class DnaController {
 
     @PostMapping("/mutant")
     public ResponseEntity<String> AddDna(@RequestBody DnaCommand dnaCommand) {
+
+        System.out.println("Ingresando a tamaño de la cadena de ADN "+ dnaCommand.getDna().length);
 
         if(this.addDnaHandler.run(dnaCommand).isMutant()){
             return new ResponseEntity<String>(HttpStatus.OK);

@@ -32,10 +32,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         UserDetails user= User.builder().username("frontAppUser")
                 .password(passwordEncoder().encode("]&$X@SKV*fg~%iyzF"))
                 .roles("USER").build();
-        UserDetails userAdmin = User.builder().username("frontAppAdmin")
-                .password(passwordEncoder().encode("]&$X@SKV*fg~%iyzF"))
-                .roles("ADMIN").build();
-        return new InMemoryUserDetailsManager(user,userAdmin);
+        return new InMemoryUserDetailsManager(user);
     }
     @Bean
     public PasswordEncoder passwordEncoder() {

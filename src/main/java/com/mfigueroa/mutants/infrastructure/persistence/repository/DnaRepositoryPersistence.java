@@ -18,7 +18,6 @@ public class DnaRepositoryPersistence implements DnaRepository {
 
     @Override
     public  void addDna(Dna dna){
-        System.out.println(dna);
         entityManager.persist(DnaBuilder.convertToEntity(dna));
     }
 }
