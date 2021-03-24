@@ -1,8 +1,6 @@
 package com.mfigueroa.mutants.domain.service;
 
-import com.mfigueroa.mutants.domain.Dna;
 import com.mfigueroa.mutants.domain.Stat;
-import com.mfigueroa.mutants.domain.repository.DnaRepository;
 import com.mfigueroa.mutants.domain.repository.StatRepository;
 import org.springframework.stereotype.Component;
 

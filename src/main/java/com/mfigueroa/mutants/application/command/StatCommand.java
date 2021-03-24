@@ -1,12 +1,12 @@
-package com.mfigueroa.mutants.domain;
+package com.mfigueroa.mutants.application.command;
 
-public class Stat {
+public class StatCommand {
 
     private Long countMutantDna;
     private Long countHumanDna;
     private double ratio;
 
-    public Stat(Long countMutantDna, Long countHumanDna, double ratio) {
+    public StatCommand(Long countMutantDna, Long countHumanDna, double ratio) {
         this.countMutantDna = countMutantDna;
         this.countHumanDna = countHumanDna;
         this.ratio = ratio;
@@ -15,6 +15,7 @@ public class Stat {
     public Long getCountMutantDna() {
         return countMutantDna;
     }
+
 
     public Long getCountHumanDna() {
         return countHumanDna;

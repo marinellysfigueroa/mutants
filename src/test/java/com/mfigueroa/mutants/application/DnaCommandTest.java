@@ -3,7 +3,6 @@ package com.mfigueroa.mutants.application;
 import com.mfigueroa.mutants.application.command.DnaCommand;
 import com.mfigueroa.mutants.application.factory.DnaFactory;
 import com.mfigueroa.mutants.domain.Dna;
-import com.mfigueroa.mutants.testdatabuilder.MutantDnaTestDataBuilder;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -10,12 +10,6 @@ public class DnaCommand {
         this.dna = dna;
     }
 
-    public DnaCommand(Long id, String[] dna, boolean isMutant) {
-        this.id = id;
-        this.dna = dna;
-        this.isMutant = isMutant;
-    }
-
     public Long getId() {
         return id;
     }

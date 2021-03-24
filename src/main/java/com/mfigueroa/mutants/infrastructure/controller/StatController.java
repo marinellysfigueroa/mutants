@@ -1,5 +1,6 @@
 package com.mfigueroa.mutants.infrastructure.controller;
 
+import com.mfigueroa.mutants.application.command.StatCommand;
 import com.mfigueroa.mutants.application.handler.mutant.StatHandler;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +16,11 @@ public class StatController {
         this.statHandler = statHandler;
     }
 
-
     @GetMapping("/stats")
     public ResponseEntity getStat() {
-        System.out.println("Entra a stat");
-        return new ResponseEntity(this.statHandler.run(),HttpStatus.OK);
+        StatCommand statCommand = this.statHandler.run();
+        return new ResponseEntity(statCommand,HttpStatus.OK);
 
     }
-
 
 }

@@ -1,6 +1,5 @@
 package com.mfigueroa.mutants.domain;
 
-import com.mfigueroa.mutants.domain.Dna;
 import com.mfigueroa.mutants.domain.service.ValidateMutantService;
 import com.mfigueroa.mutants.testdatabuilder.HumanDnaTestDataBuilder;
 import com.mfigueroa.mutants.testdatabuilder.MutantDnaTestDataBuilder;

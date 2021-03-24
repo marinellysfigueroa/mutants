@@ -1,6 +1,5 @@
 package com.mfigueroa.mutants.infrastructure.persistence.entity;
 
-import com.mfigueroa.mutants.domain.Stat;
 import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
 import org.hibernate.annotations.Synchronize;
@@ -17,51 +16,22 @@ public class StatEntity implements Serializable {
 
     @Id
     private String id;
-    @Column(name = "count_mutant_dna")
+    @Column()
     private Long countMutantDna;
     @Column()
     private Long countHumanDna;
     @Column()
     private double ratio;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Long getCountMutantDna() {
         return countMutantDna;
-    }
-
-    public void setCountMutantDna(Long countMutantDna) {
-        this.countMutantDna = countMutantDna;
     }
 
     public Long getCountHumanDna() {
         return countHumanDna;
     }
 
-    public void setCountHumanDna(Long countHumanDna) {
-        this.countHumanDna = countHumanDna;
-    }
-
     public double getRatio() {
         return ratio;
-    }
-
-    public void setRatio(double ratio) {
-        this.ratio = ratio;
-    }
-
-    @Override
-    public String toString() {
-        return "StatEntity{" +
-                "“count_mutant_dna=" + countMutantDna +
-                ", “count_human_dna=" + countHumanDna +
-                ", ratio=" + ratio +
-                '}';
     }
 }
