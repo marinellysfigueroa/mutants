@@ -15,9 +15,9 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
         http.cors().and()
        // Allows to consult the token
-        .authorizeRequests (). antMatchers ("/oauth/token").permitAll();
+        .authorizeRequests (). antMatchers ("/oauth/token","/mutant").permitAll();
         // Request authorization to consult mutants and stat
-        http.requestMatchers (). antMatchers ("/stats","/mutant").and().authorizeRequests().anyRequest(). access ("hasRole ('USER')");
+        http.requestMatchers (). antMatchers ("/stats").and().authorizeRequests().anyRequest(). access ("hasRole ('USER')");
 
     }
 
