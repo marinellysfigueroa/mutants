@@ -1,8 +1,6 @@
 package com.mfigueroa.mutants.infrastructure.controller;
 
-import com.mfigueroa.mutants.application.command.DnaCommand;
 import com.mfigueroa.mutants.application.handler.mutant.StatHandler;
-import com.mfigueroa.mutants.domain.Stat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +17,9 @@ public class StatController {
 
 
     @GetMapping("/stats")
-    public Stat getStat() {
+    public ResponseEntity getStat() {
         System.out.println("Entra a stat");
-        return this.statHandler.run();
+        return new ResponseEntity(this.statHandler.run(),HttpStatus.OK);
 
     }
 

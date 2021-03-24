@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
 
     @Override
-    public void configure (HttpSecurity http) throws Exception {
+    public void configure(HttpSecurity http) throws Exception {
 
+        // TODO
         http.cors().and()
-       // Allows to consult the token
-        .authorizeRequests (). antMatchers ("/oauth/token","/mutant").permitAll();
+                // Allows to consult the token
+                // .authorizeRequests().antMatchers("/oauth/token", "/mutant","/stats").permitAll()
+                .authorizeRequests().antMatchers("/oauth/token", "/mutant","/stats").permitAll();
         // Request authorization to consult mutants and stat
-        http.requestMatchers (). antMatchers ("/stats").and().authorizeRequests().anyRequest(). access ("hasRole ('USER')");
+        // http.requestMatchers().antMatchers("/stats").and().authorizeRequests().anyRequest().access("hasRole ('USER')");
 
     }
 

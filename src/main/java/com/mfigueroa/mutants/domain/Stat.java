@@ -1,5 +1,7 @@
 package com.mfigueroa.mutants.domain;
 
+import java.util.Objects;
+
 public class Stat {
 
     private Long countMutantDna;
@@ -30,4 +32,5 @@ public class Stat {
         }
         return ratio;
     }
+
 }

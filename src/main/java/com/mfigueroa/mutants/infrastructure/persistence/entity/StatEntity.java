@@ -17,7 +17,7 @@ public class StatEntity implements Serializable {
 
     @Id
     private String id;
-    @Column()
+    @Column(name = "count_mutant_dna")
     private Long countMutantDna;
     @Column()
     private Long countHumanDna;
@@ -54,5 +54,14 @@ public class StatEntity implements Serializable {
 
     public void setRatio(double ratio) {
         this.ratio = ratio;
+    }
+
+    @Override
+    public String toString() {
+        return "StatEntity{" +
+                "“count_mutant_dna=" + countMutantDna +
+                ", “count_human_dna=" + countHumanDna +
+                ", ratio=" + ratio +
+                '}';
     }
 }

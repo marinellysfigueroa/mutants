@@ -1,5 +1,9 @@
 package com.mfigueroa.mutants.infrastructure.persistence.entity;
 
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.TypeDefs;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -9,7 +13,7 @@ public class DnaEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column()
+
     private String[] dna;
 
     @Column()

@@ -11,6 +11,10 @@ public class Dna {
 		this.isMutant = isMutant;
 	}
 
+	public Dna(String[] dna) {
+		this.dna = dna;
+	}
+
 	public Long getId() {
 		return id;
 	}
