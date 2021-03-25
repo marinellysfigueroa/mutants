@@ -2,6 +2,7 @@ package com.mfigueroa.mutants.infrastructure.security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -41,11 +42,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-        http.authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers("/h2-console/**").permitAll();
-
+        http.csrf().disable().authorizeRequests()
+                .antMatchers(HttpMethod.OPTIONS,
+                        "**/oauth/token","/h2-console/**","/").permitAll();
         http.csrf().disable();
         http.headers().frameOptions().disable();
     }
